@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import {
   getCartTotal,
@@ -10,6 +11,7 @@ import {
 import { BASE_URL } from "../utils/BaseUrl";
 
 const CartPage = () => {
+  const Navigate = useNavigate();
   const { cart, totalQuantity, totalPrice } = useSelector(
     (state) => state.allCart
   );
@@ -19,6 +21,13 @@ const CartPage = () => {
   useEffect(() => {
     dispatch(getCartTotal());
   }, [cart]);
+
+  const handleCheckout = () => {
+    if (totalPrice > 0) {
+      alert("Thanks! Your order has been placed  successfully");
+      setTimeout(Navigate("/"), 2000);
+    }
+  };
 
   return (
     <div className="cart-page">
@@ -132,6 +141,7 @@ const CartPage = () => {
                   </ul>
 
                   <button
+                    onClick={handleCheckout}
                     type="button"
                     className="btn btn-primary btn-lg btn-block"
                   >

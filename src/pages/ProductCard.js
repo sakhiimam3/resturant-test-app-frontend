@@ -47,7 +47,7 @@ export default function ProductCard() {
           />
         ) : (
           <MDBRow className="mb-3">
-            {items.map((item) => (
+            {items?.map((item) => (
               <MDBCol key={item.id} size="md  mb-3">
                 <MDBCard className="product-card">
                   <MDBCardImage
