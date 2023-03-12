@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import ProductCard from "./components/ProductCard";
-import CartPage from "./components/cartPage";
+import Footer from "./components/Footer";
+import ProductCard from "./pages/ProductCard";
+import CartPage from "./pages/cartPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route exact path="/" element={<ProductCard />} />
           <Route path="/cart" element={<CartPage />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );

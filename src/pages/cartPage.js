@@ -7,6 +7,7 @@ import {
   decreaseItemQuantity,
   increaseItemQuantity,
 } from "../features/cartSlice";
+import { BASE_URL } from "../utils/BaseUrl";
 
 const CartPage = () => {
   const { cart, totalQuantity, totalPrice } = useSelector(
@@ -20,7 +21,7 @@ const CartPage = () => {
   }, [cart]);
 
   return (
-    <div>
+    <div className="cart-page">
       <section className="h-100 gradient-custom">
         <div className="container py-5">
           <div className="row d-flex justify-content-center my-4">
@@ -30,15 +31,15 @@ const CartPage = () => {
                   <h5 className="mb-0">Cart - {cart.length} items</h5>
                 </div>
                 <div className="card-body">
-                  {cart?.map((data) => (
-                    <div className="row">
+                  {cart?.map((data, i) => (
+                    <div className="row" key={i}>
                       <div className="col-lg-3 col-md-12 mb-4 mb-lg-0">
                         <div
                           className="bg-image hover-overlay hover-zoom ripple rounded"
                           data-mdb-ripple-color="light"
                         >
                           <img
-                            src={data.img}
+                            src={`${BASE_URL}/upload/${data.img}`}
                             className="w-100"
                             alt="Blue Jeans Jacket"
                           />
@@ -55,7 +56,7 @@ const CartPage = () => {
                           className="btn btn-primary btn-sm me-1 mb-2"
                           data-mdb-toggle="tooltip"
                           title="Remove item"
-                          onClick={() => dispatch(removeItem(data.id))}
+                          onClick={() => dispatch(removeItem(data._id))}
                         >
                           <i className="fas fa-trash"></i>
                         </button>
@@ -76,18 +77,16 @@ const CartPage = () => {
                           </button>
 
                           <div className="form-outline">
+                            <span>Quantity</span>
                             <input
                               id="form1"
                               min="0"
                               name="quantity"
                               value={data.quantity}
                               type="number"
-                              className="form-control"
+                              className="form-control input"
                               onChange={() => null}
                             />
-                            <label className="form-label" for="form1">
-                              Quantity
-                            </label>
                           </div>
 
                           <button
@@ -101,7 +100,7 @@ const CartPage = () => {
                         </div>
 
                         <p className="text-start text-md-center">
-                          <strong>{data.price}</strong>
+                          <strong> Price : {data.price}</strong>
                         </p>
                       </div>
                       <hr className="my-4" />

@@ -20,14 +20,27 @@ export default function App() {
 
   return (
     <MDBNavbar light bgColor="light">
-      <MDBContainer fluid>
-        <MDBNavbarBrand>Navbar</MDBNavbarBrand>
+      <MDBContainer className="nav-bar-top">
+        <MDBNavbarBrand>
+          <Link to="/">
+            <img
+              src="https://cdn3.vectorstock.com/i/1000x1000/93/87/initial-letter-sk-restaurant-logo-template-vector-43909387.jpg"
+              alt="logo"
+              className="logo"
+            />
+          </Link>
+        </MDBNavbarBrand>
         <span>
           <Link to="/">All Product </Link>
         </span>
-        <MDBBtn color="light">
-          <Link to="/cart">Cart({totalQuantity})</Link>
-        </MDBBtn>
+
+        <Link to="/cart">
+          <i className="fas fa-utensils position-relative">
+            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-danger">
+              {totalQuantity}
+            </span>
+          </i>
+        </Link>
       </MDBContainer>
     </MDBNavbar>
   );

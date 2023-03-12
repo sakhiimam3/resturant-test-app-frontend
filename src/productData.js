@@ -27,11 +27,4 @@ export default [
     img: "https://res.cloudinary.com/drecbsopp/image/upload/v1627398698/nokia3_resize_md_qdw7bv.jpg",
     quantity: 1,
   },
-  {
-    id: 5,
-    title: "Apple i phone",
-    price: 4000.0,
-    img: "https://www.91-img.com/gallery_images_uploads/3/d/3df5ca6a9b470f715b085991144a5b76e70da975.JPG?tr=h-550,w-0,c-at_max",
-    quantity: 1,
-  },
 ];
