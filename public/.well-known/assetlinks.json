@@ -1,0 +1,15 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.riverbank",
+      "sha256_cert_fingerprints": [
+        "39:48:BB:99:6E:51:32:F1:A6:9A:6E:48:04:AF:BA:14:06:4B:43:55:C9:CD:20:76:9F:79:76:66:82:99:8B:AD",
+        "59:02:B7:DD:C5:66:10:C7:67:F4:37:FA:45:05:54:A2:37:D1:A0:D2:FC:25:2D:85:E9:BA:68:43:63:C4:4A:E7",
+        "FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C",
+        "02:42:F0:B7:73:37:34:0B:D2:50:8D:C2:D8:76:EC:DA:2D:09:02:26:01:55:33:52:9F:AF:82:5D:8E:07:46:9E"
+      ]
+    }
+  }
+]
